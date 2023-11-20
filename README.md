@@ -1,3 +1,60 @@
+
+# ttt (Terribly Tiny Tales) profile
+
+This project is all about to create a Profile to show the stories uploaded from an user and the user profile.
+
+## File Structure
+
+```bash
+  scr
+    Components
+      Header.js 
+      Profile.js 
+      Post.js 
+    App.js
+    App.CSS
+    Index.js
+    ...
+```
+
+## Components
+
+### `Header`
+This component is the Header of the project where the logo and Test and STORIES on the left side and a button on the right for courses.
+
+### `Profile`
+In this component you can see the details about the user of which the profile is like the Image, Name, Follower count, Following count, Number of total likes,views and Posts.
+
+### `Post`
+The Post component showcases the creativity of the user by displaying the short stories they have shared. Users can easily scroll through multiple posts, with each post featuring.
+
+**And all the components are rendering in App.js**
+
+
+## Tech Stack
+
+*Client:* React,CSS,javascript
+
+
+
+
+## Libraries and Plugins Used
+- **@fortawesome/fontawesome-svg-core: v6.4.2** - Scalable vector icons with customization options.
+
+- **@fortawesome/free-solid-svg-icons: v6.4.2** - Collection of free solid icons for use in the project.
+
+- **@fortawesome/react-fontawesome: v0.2.0** - React component for easy integration of Font Awesome icons.
+
+- **@testing-library/user-event: v13.5.0** - Library for simulating user events in React component testing.
+
+- **react: v18.2.0** - Core library for building user interfaces with React.
+- **react-dom: v18.2.0** - React package for DOM-related methods.
+- **react-scripts: v5.0.1** - Configuration and scripts for Create React App.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,6 +85,21 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+
+
+## Deployment
+
+This Project is Deployed on Netlify.
+
+```bash
+  npm run build
+```
+- Upload the Build dir to the Netlify or you can use your gihub repo and submit the folder and your file will be live.
+
+## Live Demo
+https://tttprofile.netlify.app/
+
 
 ### `npm run eject`
 
@@ -60,11 +132,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 ### Advanced Configuration
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

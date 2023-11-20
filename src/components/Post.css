@@ -29,7 +29,24 @@
     color: #777;
   
   
+
+
   }
+
+
+  .thought{
+    font-weight: 500;
+  }
+  .t-type{
+    color:  #65B5CE;
+   
+  }
+  
+  .post-b-right{
+    display: flex;
+  }
+  
+
 
   /* Hide scrollbar for WebKit browsers */
 .post-list::-webkit-scrollbar {
@@ -39,3 +56,5 @@
 .post-list::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+
+
