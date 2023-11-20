@@ -1,0 +1,88 @@
+{
+    "user_id": 10,
+    "username": "Anuj Gosalia",
+    "user_title": "Co-founder & CEO at Terribly Tiny Tales",
+    "user_website": "http://www.instagram.com/anujgosalia",
+    "user_image": "https://pbs.twimg.com/profile_images/1148507476578275328/fsrvymGR_400x400.jpg",
+    "banner_image": "https://i0.wp.com/www.benday.com/wp-content/uploads/2015/03/paris-bridge-horizontal.jpg?w=1200&ssl=1",
+    "followers": 6482,
+    "following": 245,
+    "total_posts_started": 125,
+    "total_likes": "26.0k",
+    "total_views": "57.8k",
+    "total_thumbup":"12",
+    "total_post": "134 Posts",
+    "posts": [
+      {
+        "post_id": 1001,
+        "title": "New design project in progress",
+        "content": "Working on a new exciting design project. Can't wait to share!",
+        "likes": 40,
+        "views": 180
+      },
+      {
+        "post_id": 1002,
+        "title": "Art exhibition tonight!",
+        "content": "Join me tonight at the art exhibition. Looking forward to a creative evening!",
+        "likes": 60,
+        "views": 250
+      },
+      {
+        "post_id": 1003,
+        "title": "Creative process behind my latest illustration",
+        "content": "Sharing insights into the creative process behind my latest illustration. Stay tuned for more!",
+        "likes": 45,
+        "views": 200
+      },
+      {
+        "post_id": 1004,
+        "title": "Collaboration with fellow artists",
+        "content": "Excited about a collaboration with talented artists. Together, we're creating something unique!",
+        "likes": 75,
+        "views": 300
+      },
+      {
+        "post_id": 1005,
+        "title": "Designing a new logo for a client",
+        "content": "Currently working on designing a new logo for a client. A challenging and rewarding project!",
+        "likes": 55,
+        "views": 250
+      },
+      {
+        "post_id": 1006,
+        "title": "Behind the scenes of a photoshoot",
+        "content": "Providing a sneak peek behind the scenes of my latest photoshoot. Stay tuned for the final results!",
+        "likes": 65,
+        "views": 280
+      },
+      {
+        "post_id": 1007,
+        "title": "Exploring new design trends",
+        "content": "Diving into the world of design trends. What's your favorite design trend right now?",
+        "likes": 50,
+        "views": 220
+      },
+      {
+        "post_id": 1008,
+        "title": "Artistic inspiration from nature",
+        "content": "Drawing inspiration from nature for my next art project. Nature is the best muse!",
+        "likes": 70,
+        "views": 300
+      },
+      {
+        "post_id": 1009,
+        "title": "Tips for aspiring graphic designers",
+        "content": "Sharing valuable tips for aspiring graphic designers. Passion and persistence are key!",
+        "likes": 80,
+        "views": 350
+      },
+      {
+        "post_id": 1010,
+        "title": "Celebrating a design milestone",
+        "content": "Celebrating a significant milestone in my design career. Grateful for the journey so far!",
+        "likes": 90,
+        "views": 400
+      }
+    ]
+  }
+  
