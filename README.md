@@ -3,6 +3,10 @@
 
 This project is all about to create a Profile to show the stories uploaded from an user and the user profile.
 
+## Live Demo
+https://tttprofile.netlify.app/
+
+
 ## File Structure
 
 ```bash
