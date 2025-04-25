@@ -1,133 +1,91 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import {
   Box,
-  Button,
+  Card,
+  CardHeader,
+  CardContent,
   Typography,
-  Paper,
   List,
   ListItem,
-  ListItemIcon,
+  ListItemAvatar,
+  Avatar,
   ListItemText,
+  LinearProgress,
   Divider,
 } from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import FilePresentIcon from '@mui/icons-material/FilePresent';
 
-const FileUploader = () => {
-  const fileInputRef = useRef();
-  const [selectedFiles, setSelectedFiles] = useState([]);
+const mockQueue = [
+  { name: 'Report_Q1_2024.pdf', eta: '2 min' },
+  { name: 'Presentation_Final.pptx', eta: '4 min' },
+  { name: 'DataSheet.xlsx', eta: '7 min' },
+];
 
-  const handleFileSelect = (e) => {
-    const files = Array.from(e.target.files);
-    setSelectedFiles(files);
-  };
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
-  };
-
+const ScanQueue = () => {
   return (
-    <Box
+    <Card
       sx={{
-        minHeight: '100vh',
-        background: 'linear-gradient(to bottom, #f7f1ff, #ffffff)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        py: 6,
+        width: 360,
+        backgroundColor: 'white',
+        borderRadius: 3,
+        boxShadow: 3,
+        ml: { xs: 0, md: 4 },
+        mt: { xs: 4, md: 0 },
       }}
     >
-      <Paper
-        elevation={6}
-        sx={{
-          border: '2px dashed #cdbdfc',
-          backgroundColor: '#fff',
-          px: 5,
-          py: 6,
-          borderRadius: 4,
-          maxWidth: 600,
-          width: '100%',
-          textAlign: 'center',
-        }}
-      >
-        <Box
-          sx={{
-            width: 80,
-            height: 80,
-            mx: 'auto',
-            mb: 2,
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #8a4ce5, #b19cd9)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <CloudUploadIcon sx={{ fontSize: 40, color: '#fff' }} />
-        </Box>
-
-        <Typography variant="h5" fontWeight="bold" color="#8a4ce5" gutterBottom>
-          Upload Your Files
-        </Typography>
-        <Typography variant="body2" color="text.secondary" mb={3}>
-          Drag & drop your files here or use the button below
-        </Typography>
-
-        <input
-          type="file"
-          hidden
-          multiple
-          ref={fileInputRef}
-          onChange={handleFileSelect}
-        />
-
-        <Button
-          variant="contained"
-          onClick={handleUploadClick}
-          sx={{
-            backgroundColor: '#8a4ce5',
-            ':hover': {
-              backgroundColor: '#713ad1',
-            },
-            px: 4,
-            py: 1.5,
-            borderRadius: 2,
-            fontWeight: 'bold',
-            textTransform: 'none',
-          }}
-        >
-          Browse Files
-        </Button>
-
-        {selectedFiles.length > 0 && (
-          <Box mt={5}>
-            <Divider sx={{ mb: 2 }} />
-            <Typography
-              variant="subtitle1"
-              fontWeight="bold"
-              color="#8a4ce5"
-              mb={2}
-            >
-              Selected Files
-            </Typography>
-            <List dense>
-              {selectedFiles.map((file, index) => (
-                <ListItem key={index}>
-                  <ListItemIcon>
-                    <InsertDriveFileIcon sx={{ color: '#8a4ce5' }} />
-                  </ListItemIcon>
+      <CardHeader
+        title="Scan Queue"
+        titleTypographyProps={{ variant: 'h6', fontWeight: 'bold' }}
+        sx={{ backgroundColor: '#8a4ce5', color: 'white' }}
+      />
+      <CardContent>
+        {mockQueue.length === 0 ? (
+          <Typography variant="body2" color="text.secondary">
+            No files in queue.
+          </Typography>
+        ) : (
+          <List disablePadding>
+            {mockQueue.map((file, index) => (
+              <Box key={index}>
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar sx={{ bgcolor: '#8a4ce5' }}>
+                      <FilePresentIcon />
+                    </Avatar>
+                  </ListItemAvatar>
                   <ListItemText
-                    primary={file.name}
-                    secondary={`${(file.size / 1024).toFixed(2)} KB`}
+                    primary={
+                      <Typography variant="subtitle1" fontWeight="600">
+                        {file.name}
+                      </Typography>
+                    }
+                    secondary={
+                      <Box display="flex" alignItems="center">
+                        <AccessTimeIcon sx={{ fontSize: 18, mr: 0.5, color: 'text.secondary' }} />
+                        <Typography variant="body2" color="text.secondary">
+                          Starts in {file.eta}
+                        </Typography>
+                      </Box>
+                    }
                   />
                 </ListItem>
-              ))}
-            </List>
-          </Box>
+                {index < mockQueue.length - 1 && <Divider variant="inset" component="li" />}
+              </Box>
+            ))}
+          </List>
         )}
-      </Paper>
-    </Box>
+
+        {/* Estimated Progress */}
+        <Box mt={4}>
+          <Typography variant="subtitle2" gutterBottom>
+            Est. Queue Progress
+          </Typography>
+          <LinearProgress color="primary" value={30} variant="determinate" />
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 
-export default FileUploader;
+export default ScanQueue;
