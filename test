@@ -9,7 +9,6 @@ import {
   ListItemIcon,
   ListItemText,
   Divider,
-  Stack,
 } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
@@ -28,88 +27,106 @@ const FileUploader = () => {
   };
 
   return (
-    <Paper
-      elevation={6}
+    <Box
       sx={{
-        border: '2px dashed #d1d5db',
-        p: 6,
-        mt: 6,
-        textAlign: 'center',
-        borderRadius: 3,
-        background: 'linear-gradient(to right, #f0f4f8, #ffffff)',
+        minHeight: '100vh',
+        background: 'linear-gradient(to bottom, #f7f1ff, #ffffff)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        py: 6,
       }}
     >
-      <Box
+      <Paper
+        elevation={6}
         sx={{
-          width: 80,
-          height: 80,
-          mx: 'auto',
-          mb: 2,
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #e3f2fd, #bbdefb)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          border: '2px dashed #cdbdfc',
+          backgroundColor: '#fff',
+          px: 5,
+          py: 6,
+          borderRadius: 4,
+          maxWidth: 600,
+          width: '100%',
+          textAlign: 'center',
         }}
       >
-        <CloudUploadIcon sx={{ fontSize: 40, color: '#1976d2' }} />
-      </Box>
-
-      <Typography variant="h5" mb={1} fontWeight="bold">
-        Upload Your Files
-      </Typography>
-      <Typography variant="body2" color="text.secondary" mb={3}>
-        Drag & drop files here or click the button to select
-      </Typography>
-
-      <input
-        type="file"
-        hidden
-        multiple
-        ref={fileInputRef}
-        onChange={handleFileSelect}
-      />
-
-      <Button
-        variant="contained"
-        size="large"
-        onClick={handleUploadClick}
-        sx={{
-          backgroundColor: '#1976d2',
-          ':hover': {
-            backgroundColor: '#1565c0',
-          },
-          px: 4,
-          py: 1.5,
-          borderRadius: 2,
-          fontWeight: 'bold',
-        }}
-      >
-        Browse Files
-      </Button>
-
-      {selectedFiles.length > 0 && (
-        <Box mt={5}>
-          <Divider sx={{ mb: 2 }} />
-          <Typography variant="subtitle1" fontWeight="bold" mb={2}>
-            Files Selected:
-          </Typography>
-          <List dense>
-            {selectedFiles.map((file, index) => (
-              <ListItem key={index} disablePadding sx={{ mb: 1 }}>
-                <ListItemIcon>
-                  <InsertDriveFileIcon sx={{ color: '#2196f3' }} />
-                </ListItemIcon>
-                <ListItemText
-                  primary={file.name}
-                  secondary={`${(file.size / 1024).toFixed(2)} KB`}
-                />
-              </ListItem>
-            ))}
-          </List>
+        <Box
+          sx={{
+            width: 80,
+            height: 80,
+            mx: 'auto',
+            mb: 2,
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #8a4ce5, #b19cd9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <CloudUploadIcon sx={{ fontSize: 40, color: '#fff' }} />
         </Box>
-      )}
-    </Paper>
+
+        <Typography variant="h5" fontWeight="bold" color="#8a4ce5" gutterBottom>
+          Upload Your Files
+        </Typography>
+        <Typography variant="body2" color="text.secondary" mb={3}>
+          Drag & drop your files here or use the button below
+        </Typography>
+
+        <input
+          type="file"
+          hidden
+          multiple
+          ref={fileInputRef}
+          onChange={handleFileSelect}
+        />
+
+        <Button
+          variant="contained"
+          onClick={handleUploadClick}
+          sx={{
+            backgroundColor: '#8a4ce5',
+            ':hover': {
+              backgroundColor: '#713ad1',
+            },
+            px: 4,
+            py: 1.5,
+            borderRadius: 2,
+            fontWeight: 'bold',
+            textTransform: 'none',
+          }}
+        >
+          Browse Files
+        </Button>
+
+        {selectedFiles.length > 0 && (
+          <Box mt={5}>
+            <Divider sx={{ mb: 2 }} />
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              color="#8a4ce5"
+              mb={2}
+            >
+              Selected Files
+            </Typography>
+            <List dense>
+              {selectedFiles.map((file, index) => (
+                <ListItem key={index}>
+                  <ListItemIcon>
+                    <InsertDriveFileIcon sx={{ color: '#8a4ce5' }} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={file.name}
+                    secondary={`${(file.size / 1024).toFixed(2)} KB`}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        )}
+      </Paper>
+    </Box>
   );
 };
 
